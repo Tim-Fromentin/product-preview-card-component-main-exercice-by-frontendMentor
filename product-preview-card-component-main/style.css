@@ -1,0 +1,91 @@
+html{box-sizing:border-box}*,::after,::before{box-sizing:inherit}body{margin:0;padding:0}ol,ul{list-style:none}a{text-decoration:none;color:inherit}
+
+:root {
+    --color-primary: hsl(158, 36%, 37%);
+    --color-bg-main: hsl(30, 38%, 92%);
+    --color-bg-card: hsl(0, 0%, 100%);
+    --color-title: hsl(212, 21%, 14%);
+    --color-txt: hsl(228, 12%, 48%);
+
+    --ff-text: "Montserrat", sans-serif;
+    --ff-title: "Fraunces", serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 100px 10px;
+    background: var(--color-bg-main);
+    font-family: var(--ff-text);
+    font-weight: 500;
+    color: var(--color-txt);
+}
+
+.card {
+    background: var(--color-bg-card);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 700px;
+    border-radius: 15px;
+}
+.card_img {
+    background: url(./images/image-product-desktop.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 15px 0 0 15px;
+    }
+        @media screen and (max-width: 425px) {
+         .card {
+            grid-template-columns: 1fr;
+            grid-template-rows: 0.8fr 1fr;
+         }  
+         .card_img {
+            border-radius: 15px 15px 0 0px;
+         } 
+        }
+.card_container {
+    padding: 25px;
+}
+
+.card_btn {
+    background: var(--color-primary);
+    color: var(--color-bg-card);
+    border: none;
+    padding: 15px 0px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 100%;
+}
+.card_btn:hover {
+    background: hsl(158, 31%, 25%);;
+}
+.card_btn span {
+    margin-right: 10px;
+}
+.card_head {
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+.card_title {
+    color: var(--color-title);
+    font-family: var(--ff-title);
+    font-size: 2.5rem;
+}
+.card_price {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+.card_price span {
+    color: var(--color-primary);
+    font-size: 2rem;
+    font-family: var(--ff-title);
+    font-weight: bolder;
+    margin-right: 25px;
+}
